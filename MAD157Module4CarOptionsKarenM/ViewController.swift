@@ -19,6 +19,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var carTypeChosen :String = ""
     var carColorChosen :String = ""
     
+    enum CarColor: String {
+               case Blue = "Electric Storm Blue"
+               case Pearl = "Blizzard Pearl"
+               case Silver = "Classic Silver Metallic"
+               case Gray = "Magnetic Gray Metallic"
+               case Black = "Midnight Black Metallic"
+               case Red = "Supersonic Red"
+               case Sea = "Sea Glass Pearl"
+           }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         //
         return 1
@@ -66,28 +76,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        enum CarColor: String {
-            case Blue = "Electric Storm Blue"
-            case Pearl = "Blizzard Pearl"
-            case Silver = "Classic Silver Metallic"
-            case Gray = "Magnetic Gray Metallic"
-            case Black = "Midnight Black Metallic"
-            case Red = "Supersonic Red"
-            case Sea = "Sea Glass Pearl"
-        }
+//        enum CarColor: String {
+//            case Blue = "Electric Storm Blue"
+//            case Pearl = "Blizzard Pearl"
+//            case Silver = "Classic Silver Metallic"
+//            case Gray = "Magnetic Gray Metallic"
+//            case Black = "Midnight Black Metallic"
+//            case Red = "Supersonic Red"
+//            case Sea = "Sea Glass Pearl"
+//        }
         
         // Do any additional setup after loading the view.
         pickColorObj.delegate = self
         pickColorObj.dataSource = self
-        
-//        pickerData = ["Supersonic Red",
-//                      "Classic Silver Metallic",
-//                      "Electronic Storm Blue",
-//                      "Sea Glass Pearl",
-//                      "Midnight Black Metallic",
-//                      "Magnetic Gray Metallic",
-//                      "Wind Chill Pearl"
-//                        ]
         
         pickerData = [CarColor.Blue.rawValue,
                       CarColor.Pearl.rawValue,
@@ -110,36 +111,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         self.performSegue(withIdentifier: "showAccSegue", sender: self)
         
-//        func touchesBegan( _ touches: Set<UITouch>, with event: UIEvent?) {         performSegue(withIdentifier: "showAccSegue", sender: self )     }
-
     }
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-//        let selectedRow = sender as? Int
-//        print("selected row --->>>>> \(selectedRow)")
-//
-//        var key2 = Array(self.movieDictionary8.keys)[selectedRow ?? 0]
-//        var value2 = Array(self.movieDictionary8.values)[selectedRow ?? 0]
-//
-//        print("key2 --->>>>>>> \(key2)")
-//        print("value2 --->>>>>>>> \(value2)")
-        
-        //.. if you used a func to pass data instead... but not necessary here
-        //vc.setMovieDetail(fTitle: key2)
-        
         let nv = segue.destination as! AccViewController
-        //var vc = segue.destination as! MovieDetailVC
-        
+       
         print("the color of the car chosen on first vc = \(carColorChosen)")
         nv.priusColor = carColorChosen
-        
-//        vc.movieTitle = key2
-//        vc.movieYear = value2.mYear
-//        vc.movieType = value2.mType
-//        vc.movieIMDB = value2.mIMDB
-//        vc.moviePoster = value2.mPoster
         
     }
     
