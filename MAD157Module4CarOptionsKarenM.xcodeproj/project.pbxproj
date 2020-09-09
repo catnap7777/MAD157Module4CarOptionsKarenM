@@ -13,6 +13,13 @@
 		3A4E77BA2505CEBD007A3AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E77B82505CEBD007A3AFD /* Main.storyboard */; };
 		3A4E77BC2505CEBF007A3AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E77BB2505CEBF007A3AFD /* Assets.xcassets */; };
 		3A4E77BF2505CEBF007A3AFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E77BD2505CEBF007A3AFD /* LaunchScreen.storyboard */; };
+		3A4E77DD25086CAD007A3AFD /* electricStormBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E77D625086CAC007A3AFD /* electricStormBlue.png */; };
+		3A4E77DE25086CAD007A3AFD /* classicSilverMetallic.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E77D725086CAD007A3AFD /* classicSilverMetallic.png */; };
+		3A4E77DF25086CAD007A3AFD /* seaGlassPearl.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E77D825086CAD007A3AFD /* seaGlassPearl.png */; };
+		3A4E77E025086CAD007A3AFD /* magneticGrayMetallic.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E77D925086CAD007A3AFD /* magneticGrayMetallic.png */; };
+		3A4E77E125086CAD007A3AFD /* windChillPearl.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E77DA25086CAD007A3AFD /* windChillPearl.png */; };
+		3A4E77E225086CAD007A3AFD /* midnightBlackMetallic.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E77DB25086CAD007A3AFD /* midnightBlackMetallic.png */; };
+		3A4E77E325086CAD007A3AFD /* supersonicRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E77DC25086CAD007A3AFD /* supersonicRed.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		3A4E77BB2505CEBF007A3AFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A4E77BE2505CEBF007A3AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A4E77C02505CEBF007A3AFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A4E77D625086CAC007A3AFD /* electricStormBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = electricStormBlue.png; path = "Toyota Prius/electricStormBlue.png"; sourceTree = SOURCE_ROOT; };
+		3A4E77D725086CAD007A3AFD /* classicSilverMetallic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = classicSilverMetallic.png; path = "Toyota Prius/classicSilverMetallic.png"; sourceTree = SOURCE_ROOT; };
+		3A4E77D825086CAD007A3AFD /* seaGlassPearl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = seaGlassPearl.png; path = "Toyota Prius/seaGlassPearl.png"; sourceTree = SOURCE_ROOT; };
+		3A4E77D925086CAD007A3AFD /* magneticGrayMetallic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = magneticGrayMetallic.png; path = "Toyota Prius/magneticGrayMetallic.png"; sourceTree = SOURCE_ROOT; };
+		3A4E77DA25086CAD007A3AFD /* windChillPearl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = windChillPearl.png; path = "Toyota Prius/windChillPearl.png"; sourceTree = SOURCE_ROOT; };
+		3A4E77DB25086CAD007A3AFD /* midnightBlackMetallic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = midnightBlackMetallic.png; path = "Toyota Prius/midnightBlackMetallic.png"; sourceTree = SOURCE_ROOT; };
+		3A4E77DC25086CAD007A3AFD /* supersonicRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = supersonicRed.png; path = "Toyota Prius/supersonicRed.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +75,13 @@
 				3A4E77B62505CEBD007A3AFD /* ViewController.swift */,
 				3A4E77B82505CEBD007A3AFD /* Main.storyboard */,
 				3A4E77BB2505CEBF007A3AFD /* Assets.xcassets */,
+				3A4E77D725086CAD007A3AFD /* classicSilverMetallic.png */,
+				3A4E77D625086CAC007A3AFD /* electricStormBlue.png */,
+				3A4E77D925086CAD007A3AFD /* magneticGrayMetallic.png */,
+				3A4E77DB25086CAD007A3AFD /* midnightBlackMetallic.png */,
+				3A4E77D825086CAD007A3AFD /* seaGlassPearl.png */,
+				3A4E77DC25086CAD007A3AFD /* supersonicRed.png */,
+				3A4E77DA25086CAD007A3AFD /* windChillPearl.png */,
 				3A4E77BD2505CEBF007A3AFD /* LaunchScreen.storyboard */,
 				3A4E77C02505CEBF007A3AFD /* Info.plist */,
 			);
@@ -125,9 +146,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A4E77E325086CAD007A3AFD /* supersonicRed.png in Resources */,
+				3A4E77DD25086CAD007A3AFD /* electricStormBlue.png in Resources */,
 				3A4E77BF2505CEBF007A3AFD /* LaunchScreen.storyboard in Resources */,
+				3A4E77E025086CAD007A3AFD /* magneticGrayMetallic.png in Resources */,
 				3A4E77BC2505CEBF007A3AFD /* Assets.xcassets in Resources */,
+				3A4E77DF25086CAD007A3AFD /* seaGlassPearl.png in Resources */,
 				3A4E77BA2505CEBD007A3AFD /* Main.storyboard in Resources */,
+				3A4E77DE25086CAD007A3AFD /* classicSilverMetallic.png in Resources */,
+				3A4E77E125086CAD007A3AFD /* windChillPearl.png in Resources */,
+				3A4E77E225086CAD007A3AFD /* midnightBlackMetallic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
