@@ -20,6 +20,7 @@
 		3A4E77E125086CAD007A3AFD /* windChillPearl.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E77DA25086CAD007A3AFD /* windChillPearl.png */; };
 		3A4E77E225086CAD007A3AFD /* midnightBlackMetallic.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E77DB25086CAD007A3AFD /* midnightBlackMetallic.png */; };
 		3A4E77E325086CAD007A3AFD /* supersonicRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E77DC25086CAD007A3AFD /* supersonicRed.png */; };
+		3A4E77E925092112007A3AFD /* AccViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E77E825092112007A3AFD /* AccViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		3A4E77DA25086CAD007A3AFD /* windChillPearl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = windChillPearl.png; path = "Toyota Prius/windChillPearl.png"; sourceTree = SOURCE_ROOT; };
 		3A4E77DB25086CAD007A3AFD /* midnightBlackMetallic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = midnightBlackMetallic.png; path = "Toyota Prius/midnightBlackMetallic.png"; sourceTree = SOURCE_ROOT; };
 		3A4E77DC25086CAD007A3AFD /* supersonicRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = supersonicRed.png; path = "Toyota Prius/supersonicRed.png"; sourceTree = SOURCE_ROOT; };
+		3A4E77E825092112007A3AFD /* AccViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				3A4E77B22505CEBD007A3AFD /* AppDelegate.swift */,
 				3A4E77B42505CEBD007A3AFD /* SceneDelegate.swift */,
 				3A4E77B62505CEBD007A3AFD /* ViewController.swift */,
+				3A4E77E825092112007A3AFD /* AccViewController.swift */,
 				3A4E77B82505CEBD007A3AFD /* Main.storyboard */,
 				3A4E77BB2505CEBF007A3AFD /* Assets.xcassets */,
 				3A4E77D725086CAD007A3AFD /* classicSilverMetallic.png */,
@@ -166,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A4E77E925092112007A3AFD /* AccViewController.swift in Sources */,
 				3A4E77B72505CEBD007A3AFD /* ViewController.swift in Sources */,
 				3A4E77B32505CEBD007A3AFD /* AppDelegate.swift in Sources */,
 				3A4E77B52505CEBD007A3AFD /* SceneDelegate.swift in Sources */,

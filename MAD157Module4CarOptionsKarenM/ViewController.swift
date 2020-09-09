@@ -10,7 +10,15 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet var addAccButton: UIButton!
     // MARK:  Test picker
+    @IBOutlet var priusColorPict: UIImageView!
+    @IBOutlet var pickColorObj: UIPickerView!
+    
+    var pickerData: [String] = [String]()
+    var carTypeChosen :String = ""
+    var carColorChosen :String = ""
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         //
         return 1
@@ -27,7 +35,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
         let pickerIndex = pickColorObj.selectedRow(inComponent: 0)
+        carColorChosen = pickerData[pickerIndex]
         
         switch pickerIndex {
             case 0:
@@ -52,10 +62,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
 
-    @IBOutlet var priusColorPict: UIImageView!
-    @IBOutlet var pickColorObj: UIPickerView!
-    
-    var pickerData: [String] = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,8 +104,44 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     
+    @IBAction func addAccClicked(_ sender: Any) {
+        
+        print("button clicked")
+        
+        self.performSegue(withIdentifier: "showAccSegue", sender: self)
+        
+//        func touchesBegan( _ touches: Set<UITouch>, with event: UIEvent?) {         performSegue(withIdentifier: "showAccSegue", sender: self )     }
 
+    }
+    
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+//        let selectedRow = sender as? Int
+//        print("selected row --->>>>> \(selectedRow)")
+//
+//        var key2 = Array(self.movieDictionary8.keys)[selectedRow ?? 0]
+//        var value2 = Array(self.movieDictionary8.values)[selectedRow ?? 0]
+//
+//        print("key2 --->>>>>>> \(key2)")
+//        print("value2 --->>>>>>>> \(value2)")
+        
+        //.. if you used a func to pass data instead... but not necessary here
+        //vc.setMovieDetail(fTitle: key2)
+        
+        let nv = segue.destination as! AccViewController
+        //var vc = segue.destination as! MovieDetailVC
+        
+        print("the color of the car chosen on first vc = \(carColorChosen)")
+        nv.priusColor = carColorChosen
+        
+//        vc.movieTitle = key2
+//        vc.movieYear = value2.mYear
+//        vc.movieType = value2.mType
+//        vc.movieIMDB = value2.mIMDB
+//        vc.moviePoster = value2.mPoster
+        
+    }
     
 }
 
