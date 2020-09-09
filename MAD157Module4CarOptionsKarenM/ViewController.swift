@@ -15,7 +15,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet var priusColorPict: UIImageView!
     @IBOutlet var pickColorObj: UIPickerView!
     
-    var pickerData: [String] = [String]()
+    var pickerColorData: [String] = [String]()
+    var pickerTypeData: [String] = [String]()
     var carTypeChosen :String = ""
     var carColorChosen :String = ""
     
@@ -29,68 +30,89 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                case Sea = "Sea Glass Pearl"
            }
     
+    var priusModelDictionary = ["L Eco": (price: 24325.00, desc: "Economy"),
+                                "LE": (price: 25535.00, desc: "Luxury Edition"),
+                                "XLE": (price: 28375.00, desc: "Deluxe Luxury Edition"),
+                                "Limited": (price: 32500.00, desc: "Limited Edition"),
+                                "LE AWD-e": (price: 26935.00, desc: "Limited Edition All Wheel Drive"),
+                                "XLE AWD-e": (price: 29375.00, desc: "Deluxe Limited Edition All Wheel Drive")
+    ]
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         //
-        return 1
+        
+        if pickerView.tag == 1 {    //.. pickerView 1 - car type
+            return 1
+        } else {
+            //.. pickerView 2 - car color
+            return 1
+        }
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         //
-        return pickerData.count
+        
+        if pickerView.tag == 1 {  //.. pickerView 1 - car type
+            return pickerTypeData.count
+        } else {
+            //.. pickerView 2 - car color
+            return pickerColorData.count
+        }
         
     }
     
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component:         Int) -> String? {
-        return pickerData[row]     }
+        
+        if pickerView.tag == 1 {  //.. pickerView 1 - car type
+            return pickerTypeData[row]
+        } else {
+            //.. pickerView 2 - car color
+            return pickerColorData[row]     }
+        }
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        let pickerIndex = pickColorObj.selectedRow(inComponent: 0)
-        carColorChosen = pickerData[pickerIndex]
+        if pickerView.tag == 1 {
+            print("pickerView tag1 triggered")
+        }
         
-        switch pickerIndex {
+        if pickerView.tag == 2 {
+            let pickerColorIndex = pickColorObj.selectedRow(inComponent: 0)
+            carColorChosen = pickerColorData[pickerColorIndex]
+            
+            switch pickerColorIndex {
             case 0:
-            priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
+                priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
             case 1:
-            priusColorPict.image = UIImage.init(named: "windChillPearl.png")
+                priusColorPict.image = UIImage.init(named: "windChillPearl.png")
             case 2:
-            priusColorPict.image = UIImage.init(named: "classicSilverMetallic.png")
+                priusColorPict.image = UIImage.init(named: "classicSilverMetallic.png")
             case 3:
-            priusColorPict.image = UIImage.init(named: "magneticGrayMetallic.png")
+                priusColorPict.image = UIImage.init(named: "magneticGrayMetallic.png")
             case 4:
-            priusColorPict.image = UIImage.init(named: "midnightBlackMetallic.png")
+                priusColorPict.image = UIImage.init(named: "midnightBlackMetallic.png")
             case 5:
-            priusColorPict.image = UIImage.init(named: "supersonicRed.png")
+                priusColorPict.image = UIImage.init(named: "supersonicRed.png")
             case 6:
-            priusColorPict.image = UIImage.init(named: "seaGlassPearl.png")
+                priusColorPict.image = UIImage.init(named: "seaGlassPearl.png")
             default:
-            priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
+                priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
+            }
         }
 
        
     }
-
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        enum CarColor: String {
-//            case Blue = "Electric Storm Blue"
-//            case Pearl = "Blizzard Pearl"
-//            case Silver = "Classic Silver Metallic"
-//            case Gray = "Magnetic Gray Metallic"
-//            case Black = "Midnight Black Metallic"
-//            case Red = "Supersonic Red"
-//            case Sea = "Sea Glass Pearl"
-//        }
         
         // Do any additional setup after loading the view.
         pickColorObj.delegate = self
         pickColorObj.dataSource = self
         
-        pickerData = [CarColor.Blue.rawValue,
+        pickerColorData = [CarColor.Blue.rawValue,
                       CarColor.Pearl.rawValue,
                       CarColor.Silver.rawValue,
                       CarColor.Gray.rawValue,
@@ -99,7 +121,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                       CarColor.Sea.rawValue
                     ]
                       
-        
         priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
         
     }
