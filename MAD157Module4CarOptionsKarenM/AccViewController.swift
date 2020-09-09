@@ -11,10 +11,12 @@ import UIKit
 class AccViewController: UIViewController {
     
     var priusType = ""
-    var priusColor = "what is going on"
+    var priusColor = ""
     
+    @IBOutlet var accPicker: UIPickerView!
+    @IBOutlet var carTypeLabel: UILabel!
+    @IBOutlet var carColorLabel: UILabel!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +25,10 @@ class AccViewController: UIViewController {
         print("in new view controller for accessories")
         //print("priusType = \(priusType)")
         print("priusColor = \(priusColor)")
+        
+        carTypeLabel.text = priusType
+        carColorLabel.text = priusColor
+        
     }
     
 
