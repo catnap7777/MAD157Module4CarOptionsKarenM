@@ -23,6 +23,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var carTypePrice :Double = 0
     var carTypeDesc :String = ""
     var carColorChosen :String = ""
+    var pictureNameString = ""
     
     enum CarColor: String {
                case Blue = "Electric Storm Blue"
@@ -125,20 +126,30 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             switch pickerColorIndex {
             case 0:
                 priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
+                pictureNameString = "electricStormBlue.png"
+                //print("pictureNameString in first VC1111 = \(pictureNameString)")
             case 1:
                 priusColorPict.image = UIImage.init(named: "windChillPearl.png")
+                pictureNameString = "windChillPearl.png"
+                //print("pictureNameString in first VC2222 = \(pictureNameString)")
             case 2:
                 priusColorPict.image = UIImage.init(named: "classicSilverMetallic.png")
+                pictureNameString = "classicSilverMetallic.png"
             case 3:
                 priusColorPict.image = UIImage.init(named: "magneticGrayMetallic.png")
+                pictureNameString = "magneticGrayMetallic.png"
             case 4:
                 priusColorPict.image = UIImage.init(named: "midnightBlackMetallic.png")
+                pictureNameString = "midnightBlackMetallic.png"
             case 5:
                 priusColorPict.image = UIImage.init(named: "supersonicRed.png")
+                pictureNameString = "supersonicRed.png"
             case 6:
                 priusColorPict.image = UIImage.init(named: "seaGlassPearl.png")
+                pictureNameString = "seaGlassPearl.png"
             default:
                 priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
+                pictureNameString = "electricStormBlue.png"
             }
         }
     
@@ -168,12 +179,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             print("key added to pickerTypeData array: \(k)")
         }
         
+        pickerTypeData.sort()
+        
         //.. this code is used to set initial values before pickers move
         carColorChosen = pickerColorData[0]  //... electric storm blue should be first
         carTypeChosen = pickerTypeData[0]   //... LE AWD-e should be first
         carTypeDesc = priusModelDictionary[carTypeChosen]?.desc as! String
         carTypePrice = priusModelDictionary[carTypeChosen]?.price as! Double
         priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
+        pictureNameString = "electricStormBlue.png"
         
     }
     
@@ -192,6 +206,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         nv.priusType = carTypeChosen
         nv.priusTypeDesc = carTypeDesc
         nv.priusTypePrice = carTypePrice
+        nv.pictureNameString = pictureNameString
+        print("pictureNameString in first VC = \(pictureNameString)")
         
     }
     
