@@ -43,8 +43,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     ]
  
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        //
-        
+        //.. tags are used to distinguish between the two picker on the view controller
         switch pickerView.tag {
         case 1:             //.. pickerView 1 - car type
             return 1
@@ -53,12 +52,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         default:
             return 1
         }
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        //
-        
+        //.. tags are used to distinguish between the two picker on the view controller
         if pickerView.tag == 1 {  //.. pickerView 1 - car type
             print("number of rows in pickerTypeData array = \(pickerTypeData.count)")
             return pickerTypeData.count
@@ -68,24 +65,50 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             print("number of rows in pickerColorData array = \(pickerColorData.count)")
                 return pickerColorData.count
         }
-        
         //.. should theoretically never get to this
         return pickerColorData.count
     }
+//..
+//.. old function (w titleForRow) is ok unless changing font; then use one with
+//..    viewForRow (see below)
+//    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component:         Int) -> String? {
+//        //.. tags are used to distinguish between the two picker on the view controller
+//        if pickerView.tag == 1 {  //.. pickerView 1 - car type
+//            return pickerTypeData[row]
+//        }
+//        if pickerView.tag == 2 {  //.. pickerView 2 - car color
+//            return pickerColorData[row]
+//        }
+//        //.. should theoretically never get to this
+//        return pickerColorData[row]
+//    }
     
-    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component:         Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel = UILabel()
         
         if pickerView.tag == 1 {  //.. pickerView 1 - car type
-            return pickerTypeData[row]
-        } else {
-            //.. pickerView 2 - car color
-            return pickerColorData[row]
+            pickerLabel.text = pickerTypeData[row]
+            print("pickerlabel \(pickerLabel.text) - \(pickerTypeData[row])")
         }
+        if pickerView.tag == 2 {  //.. pickerView 2 - car color
+            pickerLabel.text = pickerColorData[row]
+            print("pickerlabel \(pickerLabel.text) - \(pickerColorData[row])")
+        }
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            pickerLabel.font = UIFont.systemFont(ofSize: 16)
+            //pickerLabel.text = "Row \(row)"  //.. not needed bc set above
+        } else if UIDevice.current.userInterfaceIdiom == .phone {
+            pickerLabel.font = UIFont.systemFont(ofSize: 16)
+//            pickerLabel.font = UIFont.systemFont(ofSize: 14)
+            //pickerLabel.text = "Row \(row)"  //.. not needed bc set above
+        }
+        
+        return pickerLabel
     }
     
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+        //.. tags are used to distinguish between the two picker on the view controller
         if pickerView.tag == 1 {
             let pickerTypeIndex = pickCarTypeObj.selectedRow(inComponent: 0)
             carTypeChosen = pickerTypeData[pickerTypeIndex]
@@ -140,13 +163,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                       CarColor.Sea.rawValue
                     ]
         
-        //pickerTypeData = ["car type 1", "car type 2", "car type 3", "car type 4"]
-                      
         for (k,v) in priusModelDictionary {
             pickerTypeData.append(k)
             print("key added to pickerTypeData array: \(k)")
         }
         
+        //.. this code is used to set initial values before pickers move
         carColorChosen = pickerColorData[0]  //... electric storm blue should be first
         carTypeChosen = pickerTypeData[0]   //... LE AWD-e should be first
         carTypeDesc = priusModelDictionary[carTypeChosen]?.desc as! String
@@ -157,18 +179,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     @IBAction func addAccClicked(_ sender: Any) {
-        
         print("button clicked")
-        
         self.performSegue(withIdentifier: "showAccSegue", sender: self)
-        
     }
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         let nv = segue.destination as! AccViewController
-       
         print("the color of the car chosen on first vc = \(carColorChosen)")
         print("the type of the car chosen on first vc = \(carTypeChosen)")
         nv.priusColor = carColorChosen
