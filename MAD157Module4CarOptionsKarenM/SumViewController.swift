@@ -29,7 +29,7 @@ class SumViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        priusTypeLable.text = ("\(priusType) - \(priusTypeDesc) - $\(priusTypePrice)")
+        priusTypeLable.text = ("\(priusType) - \(priusTypeDesc) - Base Price: $\(priusTypePrice)")
         priusColorLabel.text = priusColor
         priusPicture.image = UIImage.init(named: pictureNameString)
         print("pictureNameString in third VC = \(pictureNameString)")

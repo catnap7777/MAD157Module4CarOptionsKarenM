@@ -107,7 +107,7 @@ class AccViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         print("priusColor = \(priusColor)")
         print("pictureNameString in second VC = \(pictureNameString)")
         
-        let priusTypeComp = ("\(priusType) - \(priusTypeDesc) - $\(priusTypePrice)")
+        let priusTypeComp = ("\(priusType) - \(priusTypeDesc) - Base Price: $\(priusTypePrice)")
         
         //carTypeLabel.text = priusType
         carTypeLabel.text = priusTypeComp
