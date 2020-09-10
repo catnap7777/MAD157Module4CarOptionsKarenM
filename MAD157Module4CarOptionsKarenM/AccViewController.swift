@@ -11,6 +11,8 @@ import UIKit
 class AccViewController: UIViewController {
     
     var priusType = ""
+    var priusTypeDesc = ""
+    var priusTypePrice = 0.0
     var priusColor = ""
     
     @IBOutlet var accPicker: UIPickerView!
@@ -23,10 +25,15 @@ class AccViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         print("in new view controller for accessories")
-        //print("priusType = \(priusType)")
+        print("priusType = \(priusType)")
+        print("priusTypeDesc = \(priusTypeDesc)")
+        print("priusTypePrice = \(priusTypePrice)")
         print("priusColor = \(priusColor)")
         
-        carTypeLabel.text = priusType
+        let priusTypeComp = ("\(priusType) - \(priusTypeDesc) - $\(priusTypePrice)")
+        
+        //carTypeLabel.text = priusType
+        carTypeLabel.text = priusTypeComp
         carColorLabel.text = priusColor
         
     }

@@ -14,10 +14,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     // MARK:  Test picker
     @IBOutlet var priusColorPict: UIImageView!
     @IBOutlet var pickColorObj: UIPickerView!
+    @IBOutlet var pickCarTypeObj: UIPickerView!
     
     var pickerColorData: [String] = [String]()
     var pickerTypeData: [String] = [String]()
+    
     var carTypeChosen :String = ""
+    var carTypePrice :Double = 0
+    var carTypeDesc :String = ""
     var carColorChosen :String = ""
     
     enum CarColor: String {
@@ -37,14 +41,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                                 "LE AWD-e": (price: 26935.00, desc: "Limited Edition All Wheel Drive"),
                                 "XLE AWD-e": (price: 29375.00, desc: "Deluxe Limited Edition All Wheel Drive")
     ]
-    
+ 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         //
         
-        if pickerView.tag == 1 {    //.. pickerView 1 - car type
+        switch pickerView.tag {
+        case 1:             //.. pickerView 1 - car type
             return 1
-        } else {
-            //.. pickerView 2 - car color
+        case 2:             //.. pickerView 1 - car color
+            return 1
+        default:
             return 1
         }
         
@@ -54,12 +60,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         //
         
         if pickerView.tag == 1 {  //.. pickerView 1 - car type
+            print("number of rows in pickerTypeData array = \(pickerTypeData.count)")
             return pickerTypeData.count
-        } else {
+        }
+        if pickerView.tag == 2 {  //.. pickerView 2 - car color
             //.. pickerView 2 - car color
-            return pickerColorData.count
+            print("number of rows in pickerColorData array = \(pickerColorData.count)")
+                return pickerColorData.count
         }
         
+        //.. should theoretically never get to this
+        return pickerColorData.count
     }
     
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component:         Int) -> String? {
@@ -68,13 +79,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             return pickerTypeData[row]
         } else {
             //.. pickerView 2 - car color
-            return pickerColorData[row]     }
+            return pickerColorData[row]
         }
+    }
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if pickerView.tag == 1 {
+            let pickerTypeIndex = pickCarTypeObj.selectedRow(inComponent: 0)
+            carTypeChosen = pickerTypeData[pickerTypeIndex]
+            
+            carTypeDesc = priusModelDictionary[carTypeChosen]?.desc as! String
+            carTypePrice = priusModelDictionary[carTypeChosen]?.price as! Double
             print("pickerView tag1 triggered")
         }
         
@@ -101,16 +118,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
             }
         }
-
-       
+    
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
         pickColorObj.delegate = self
         pickColorObj.dataSource = self
+        pickCarTypeObj.delegate = self
+        pickCarTypeObj.dataSource = self
         
         pickerColorData = [CarColor.Blue.rawValue,
                       CarColor.Pearl.rawValue,
@@ -120,7 +139,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                       CarColor.Red.rawValue,
                       CarColor.Sea.rawValue
                     ]
+        
+        //pickerTypeData = ["car type 1", "car type 2", "car type 3", "car type 4"]
                       
+        for (k,v) in priusModelDictionary {
+            pickerTypeData.append(k)
+            print("key added to pickerTypeData array: \(k)")
+        }
+        
+        carColorChosen = pickerColorData[0]  //... electric storm blue should be first
+        carTypeChosen = pickerTypeData[0]   //... LE AWD-e should be first
+        carTypeDesc = priusModelDictionary[carTypeChosen]?.desc as! String
+        carTypePrice = priusModelDictionary[carTypeChosen]?.price as! Double
         priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
         
     }
@@ -140,7 +170,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let nv = segue.destination as! AccViewController
        
         print("the color of the car chosen on first vc = \(carColorChosen)")
+        print("the type of the car chosen on first vc = \(carTypeChosen)")
         nv.priusColor = carColorChosen
+        nv.priusType = carTypeChosen
+        nv.priusTypeDesc = carTypeDesc
+        nv.priusTypePrice = carTypePrice
         
     }
     
