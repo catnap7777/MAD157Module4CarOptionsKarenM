@@ -12,6 +12,7 @@ import Foundation
 class PriusXLE: Prius2020 {
 
     var kamModel: String
+    var stdEquipString: String = ""
 
     override init(model: String, color: PriusStructures.CarColor) {
         self.kamModel = "XLE"
@@ -25,7 +26,7 @@ class PriusXLE: Prius2020 {
         let stdEquip = ["54/50 est. mpg",
                         "Toyota Safety Sense P (TSS-P) standard",
                         "17-in. 5-spoke alloy wheels with titanium-finished wheel inserts and P215/45R17 tires",
-                        "SofTex®-trimmed 61 heated front seats with 8-way power-adjustable driver's seat \n\t\tincluding power lumbar support and 4-way adjustable front passenger seat",
+                        "SofTex®-trimmed 61 heated front seats with 8-way power-adjustable driver's seat - including power lumbar support and 4-way adjustable front passenger seat",
                         "Qi-compatible wireless smartphone charging with charge indicator light",
                         "Rain-sensing variable intermittent windshield wipers",
                         "SofTex®-trimmed heated tilt/telescopic steering wheel",
@@ -34,11 +35,15 @@ class PriusXLE: Prius2020 {
 
         var i = 1
         print("\nStandard Equipment:")
+        stdEquipString = ("\n\nStandard Equipment:\n....................................")
         print("..................................................................................................")
         for item in stdEquip {
             print("\(i). \(item)")
+            stdEquipString = stdEquipString + ("\n\(i). \(item)")
             i += 1
         }
+        
+        super.myPrius2020SummaryInfo = super.myPrius2020SummaryInfo + stdEquipString
     }
 
 }

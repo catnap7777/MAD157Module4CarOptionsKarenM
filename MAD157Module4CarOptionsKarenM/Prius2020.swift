@@ -230,7 +230,7 @@ class Prius2020 {
         print("***************************************************************************************************")
         print("\n\t\tYou've selected:  \n\n\t\t\t\tModel: \(priusModel)   Color: \(priusColor)")
         
-        myPrius2020SummaryInfo = ("\t** Congrats on your 2020 Prius purchase! **")
+        myPrius2020SummaryInfo = ("** Congrats on your 2020 Prius purchase! **")
 //        ("** Congrats on your 2020 Prius purchase! **") +
 //        ("\nYou've selected:\n\tModel: \(priusModel)   Color: \(priusColor)")
 
@@ -248,8 +248,8 @@ class Prius2020 {
         }
 //**** kam
         print("\n\t\t\t\tAccessory Packages Selected:")
-        myPrius2020SummaryInfo = myPrius2020SummaryInfo +
-            ("\n\t\tAccessory Packages Selected:")
+//        myPrius2020SummaryInfo = myPrius2020SummaryInfo +
+//            ("\n\t\tAccessory Packages Selected:")
         if (priusAccPkgBuild.count) > 0 {
             for item in priusAccPkgBuild {
                 print("\t\t\t\t\tPackage: \(PriusStructures().priusAccPkgsDictionary[item]?.desc ?? "Accessory Package not Available")")
@@ -260,8 +260,8 @@ class Prius2020 {
         }
 
         print("\n\t\t\t\tExternal Accessories Selected:")
-        myPrius2020SummaryInfo = myPrius2020SummaryInfo +
-            ("\n\t\tExternal Accessories Selected:")
+//        myPrius2020SummaryInfo = myPrius2020SummaryInfo +
+//            ("\n\t\tExternal Accessories Selected:")
         
         if (priusExtAccBuild.count) > 0 {
             for item in priusExtAccBuild {
@@ -272,8 +272,8 @@ class Prius2020 {
         }
 
         print("\n\t\t\t\tInternal Accessories Selected:")
-        myPrius2020SummaryInfo = myPrius2020SummaryInfo +
-            ("\n\t\tInternal Accessories Selected:")
+//        myPrius2020SummaryInfo = myPrius2020SummaryInfo +
+//            ("\n\t\tInternal Accessories Selected:")
         
         if (priusIntAccBuild.count) > 0 {
             for item in priusIntAccBuild {

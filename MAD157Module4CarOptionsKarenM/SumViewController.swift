@@ -20,19 +20,20 @@ class SumViewController: UIViewController {
     var accPkgIncls = ""
     var pictureNameString = ""
 
-    @IBOutlet var priusTypeLable: UILabel!
+    //@IBOutlet var priusTypeLable: UILabel!
+    
+    @IBOutlet var priusTypeLabel: UILabel!
     @IBOutlet var priusColorLabel: UILabel!
     @IBOutlet var priusPicture: UIImageView!
     @IBOutlet var accPkgLabel: UILabel!
-    @IBOutlet var myPriusSummaryLabel: UILabel!
-    @IBOutlet var myPriusSummaryText: UITextView!
+   @IBOutlet var myPriusSummaryText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        priusTypeLable.text = ("\(priusType) - \(priusTypeDesc) - Base Price: $\(priusTypePrice)")
+        priusTypeLabel.text = ("\(priusType) - \(priusTypeDesc) - Base Price: $\(String(format: "%.2f", priusTypePrice))")
         priusColorLabel.text = priusColor
         priusPicture.image = UIImage.init(named: pictureNameString)
         print("pictureNameString in third VC = \(pictureNameString)")
@@ -43,33 +44,27 @@ class SumViewController: UIViewController {
         case "L Eco":
             let myPrius2020 = PriusLEco(model: priusType, color: priusColorEnum)
             myPrius2020.printModColor()
-            myPriusSummaryLabel.text = myPrius2020.myPrius2020SummaryInfo
             myPriusSummaryText.text = myPrius2020.myPrius2020SummaryInfo
             print("myPrius2020SummaryInfo = \(myPrius2020.myPrius2020SummaryInfo)")
         case "LE":
             let myPrius2020 = PriusLE(model: priusType, color: priusColorEnum)
             myPrius2020.printModColor()
-            myPriusSummaryLabel.text = myPrius2020.myPrius2020SummaryInfo
             myPriusSummaryText.text = myPrius2020.myPrius2020SummaryInfo
         case "XLE":
             let myPrius2020 = PriusXLE(model: priusType, color: priusColorEnum)
             myPrius2020.printModColor()
-            myPriusSummaryLabel.text = myPrius2020.myPrius2020SummaryInfo
             myPriusSummaryText.text = myPrius2020.myPrius2020SummaryInfo
         case "Limited":
             let myPrius2020 = PriusLimited(model: priusType, color: priusColorEnum)
             myPrius2020.printModColor()
-            myPriusSummaryLabel.text = myPrius2020.myPrius2020SummaryInfo
             myPriusSummaryText.text = myPrius2020.myPrius2020SummaryInfo
         case "LE AWD-e":
             let myPrius2020 = PriusLEAWDe(model: priusType, color: priusColorEnum)
             myPrius2020.printModColor()
-            myPriusSummaryLabel.text = myPrius2020.myPrius2020SummaryInfo
             myPriusSummaryText.text = myPrius2020.myPrius2020SummaryInfo
         case "XLE AWD-e":
             let myPrius2020 = PriusXLEAWDe(model: priusType, color: priusColorEnum)
             myPrius2020.printModColor()
-            myPriusSummaryLabel.text = myPrius2020.myPrius2020SummaryInfo
             myPriusSummaryText.text = myPrius2020.myPrius2020SummaryInfo
         default:
             print("Uh oh. Something is not right")
