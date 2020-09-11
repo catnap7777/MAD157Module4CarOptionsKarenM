@@ -18,12 +18,14 @@ class AccViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     var pictureNameString = ""
     var accPkgKey = ""
     
-    var priusAccPkgsDictionary = ["ALLWFLP": (desc: "All-Weather Floor Liner Package", incls: "All-Weather Floor Liners, Cargo Liner"),
-                                  "CMP": (desc: "Carpet Mat Package", incls: "Carpet Floor Mats, Carpet Cargo Mat"),
-                                  "FSFMLP": (desc: "Four Season FLoor Mat/Liner Package", incls: "Carpet Floor Mats, Carpet Cargo Mat, All-Weather Floor Liners"),
-                                  "PAP": (desc: "Preferred Accessory Package", incls: "Carpet Floor Mats, Carpet Cargo Mat, Rear Bumper Applique, Cargo Net - Envelope"),
-                                  "PP3": (desc: "Protection Package #3", incls: "Body Side Moldings, Door Edge Guards, Rear Bumper Applique")
-    ]
+    var priusAccPkgDictionary = PriusStructures().priusAccPkgsDictionary
+    
+//    var priusAccPkgsDictionary = ["ALLWFLP": (desc: "All-Weather Floor Liner Package", incls: "All-Weather Floor Liners, Cargo Liner"),
+//                                  "CMP": (desc: "Carpet Mat Package", incls: "Carpet Floor Mats, Carpet Cargo Mat"),
+//                                  "FSFMLP": (desc: "Four Season FLoor Mat/Liner Package", incls: "Carpet Floor Mats, Carpet Cargo Mat, All-Weather Floor Liners"),
+//                                  "PAP": (desc: "Preferred Accessory Package", incls: "Carpet Floor Mats, Carpet Cargo Mat, Rear Bumper Applique, Cargo Net - Envelope"),
+//                                  "PP3": (desc: "Protection Package #3", incls: "Body Side Moldings, Door Edge Guards, Rear Bumper Applique")
+//    ]
     
     @IBOutlet var accPicker: UIPickerView!
     @IBOutlet var carTypeLabel: UILabel!
@@ -48,7 +50,8 @@ class AccViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var pickerLabel = UILabel()
-        let accPkgKey2 = priusAccPkgsDictionary[pickerAccPkgData[row]]
+        //let accPkgKey2 = priusAccPkgsDictionary[pickerAccPkgData[row]]
+        let accPkgKey2 = PriusStructures().priusAccPkgsDictionary[pickerAccPkgData[row]]
 //        pickerLabel.text = ("\(pickerAccPkgData[row]) - \(accPkgKey?.desc ?? "no desc") - \(accPkgKey?.incls ?? "")")
         pickerLabel.text = ("\(pickerAccPkgData[row]) - \(accPkgKey2?.desc ?? "no desc")")
         
@@ -93,7 +96,8 @@ class AccViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         accPicker.delegate = self
         accPicker.dataSource = self
 
-        for (k,v) in priusAccPkgsDictionary {
+//        for (k,v) in priusAccPkgsDictionary {
+        for (k,v) in PriusStructures().priusAccPkgsDictionary {
             pickerAccPkgData.append(k)
             print("key added to pickerAccPkgData array: \(k)")
         }
@@ -116,8 +120,10 @@ class AccViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         //.. this code is used to set initial values before pickers move
         var accPkg = pickerAccPkgData[0]
         accPkgKey = pickerAccPkgData[0]
-        var accPkgDesc = priusAccPkgsDictionary[accPkg]?.desc
-        var accPkgIncls = priusAccPkgsDictionary[accPkg]?.incls
+//        var accPkgDesc = priusAccPkgsDictionary[accPkg]?.desc
+//        var accPkgIncls = priusAccPkgsDictionary[accPkg]?.incls
+        var accPkgDesc = PriusStructures().priusAccPkgsDictionary[accPkg]?.desc
+        var accPkgIncls = PriusStructures().priusAccPkgsDictionary[accPkg]?.incls
         
     }
     
@@ -136,12 +142,16 @@ class AccViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         nv2.priusTypePrice = priusTypePrice
         nv2.pictureNameString = pictureNameString
         print("accPkgKey = \(accPkgKey)")
-        print("dictionary acc desc = \(priusAccPkgsDictionary[accPkgKey]?.desc ?? "yyy")")
-        print("dictionary acc incls = \(priusAccPkgsDictionary[accPkgKey]?.incls ?? "zzz")")
+//        print("dictionary acc desc = \(priusAccPkgsDictionary[accPkgKey]?.desc ?? "yyy")")
+//        print("dictionary acc incls = \(priusAccPkgsDictionary[accPkgKey]?.incls ?? "zzz")")
+        print("dictionary acc desc = \(PriusStructures().priusAccPkgsDictionary[accPkgKey]?.desc ?? "yyy")")
+        print("dictionary acc incls = \(PriusStructures().priusAccPkgsDictionary[accPkgKey]?.incls ?? "zzz")")
         nv2.accPkg = accPkgKey
-        nv2.accPkgDesc = priusAccPkgsDictionary[accPkgKey]?.desc as! String
-        nv2.accPkgIncls = priusAccPkgsDictionary[accPkgKey]?.incls as! String
-        
+//        nv2.accPkgDesc = priusAccPkgsDictionary[accPkgKey]?.desc as! String
+//        nv2.accPkgIncls = priusAccPkgsDictionary[accPkgKey]?.incls as! String
+        nv2.accPkgDesc = PriusStructures().priusAccPkgsDictionary[accPkgKey]?.desc as! String
+        nv2.accPkgIncls = PriusStructures().priusAccPkgsDictionary[accPkgKey]?.incls as! String
+
         
 //        print("the color of the car chosen on first vc = \(carColorChosen)")
 //        print("the type of the car chosen on first vc = \(carTypeChosen)")

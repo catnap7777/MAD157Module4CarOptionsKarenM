@@ -25,27 +25,31 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var carTypeDesc :String = ""
     var carColorChosen :String = ""
     var pictureNameString = ""
+    
+    var priusModelDictionary = PriusStructures().priusModelDictionary
+    var carColor = PriusStructures.CarColor.self
+    
 
    
-    var x = PriusStructures().kampriusModelDictionary
+    //var x = PriusStructures().kampriusModelDictionary
    
-    enum CarColor: String {
-               case Blue = "Electric Storm Blue"
-               case Pearl = "Blizzard Pearl"
-               case Silver = "Classic Silver Metallic"
-               case Gray = "Magnetic Gray Metallic"
-               case Black = "Midnight Black Metallic"
-               case Red = "Supersonic Red"
-               case Sea = "Sea Glass Pearl"
-           }
+//    enum CarColor: String {
+//               case Blue = "Electric Storm Blue"
+//               case Pearl = "Blizzard Pearl"
+//               case Silver = "Classic Silver Metallic"
+//               case Gray = "Magnetic Gray Metallic"
+//               case Black = "Midnight Black Metallic"
+//               case Red = "Supersonic Red"
+//               case Sea = "Sea Glass Pearl"
+//           }
     
-    var priusModelDictionary = ["L Eco": (price: 24325.00, desc: "Economy"),
-                                "LE": (price: 25535.00, desc: "Luxury Edition"),
-                                "XLE": (price: 28375.00, desc: "Deluxe Luxury Edition"),
-                                "Limited": (price: 32500.00, desc: "Limited Edition"),
-                                "LE AWD-e": (price: 26935.00, desc: "Limited Edition All Wheel Drive"),
-                                "XLE AWD-e": (price: 29375.00, desc: "Deluxe Limited Edition All Wheel Drive")
-    ]
+//    var priusModelDictionary = ["L Eco": (price: 24325.00, desc: "Economy"),
+//                                "LE": (price: 25535.00, desc: "Luxury Edition"),
+//                                "XLE": (price: 28375.00, desc: "Deluxe Luxury Edition"),
+//                                "Limited": (price: 32500.00, desc: "Limited Edition"),
+//                                "LE AWD-e": (price: 26935.00, desc: "Limited Edition All Wheel Drive"),
+//                                "XLE AWD-e": (price: 29375.00, desc: "Deluxe Limited Edition All Wheel Drive")
+//    ]
  
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         //.. tags are used to distinguish between the two picker on the view controller
@@ -164,7 +168,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         // Do any additional setup after loading the view.
         
-        for (k,v) in x {
+        for (k,v) in priusModelDictionary {
                print(" key: = \(k)")
                print(" value: = \(v)")
            }
@@ -175,14 +179,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         pickCarTypeObj.delegate = self
         pickCarTypeObj.dataSource = self
         
-        pickerColorData = [CarColor.Blue.rawValue,
-                      CarColor.Pearl.rawValue,
-                      CarColor.Silver.rawValue,
-                      CarColor.Gray.rawValue,
-                      CarColor.Black.rawValue,
-                      CarColor.Red.rawValue,
-                      CarColor.Sea.rawValue
+        pickerColorData = [carColor.Blue.rawValue,
+                      carColor.Pearl.rawValue,
+                      carColor.Silver.rawValue,
+                      carColor.Gray.rawValue,
+                      carColor.Black.rawValue,
+                      carColor.Red.rawValue,
+                      carColor.Sea.rawValue
                     ]
+//
+//        pickerColorData = [CarColor.Blue.rawValue,
+//                  CarColor.Pearl.rawValue,
+//                  CarColor.Silver.rawValue,
+//                  CarColor.Gray.rawValue,
+//                  CarColor.Black.rawValue,
+//                  CarColor.Red.rawValue,
+//                  CarColor.Sea.rawValue
+//        ]
         
         for (k,v) in priusModelDictionary {
             pickerTypeData.append(k)
