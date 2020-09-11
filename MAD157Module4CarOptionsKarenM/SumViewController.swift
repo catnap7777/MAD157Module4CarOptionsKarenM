@@ -26,7 +26,7 @@ class SumViewController: UIViewController {
     @IBOutlet var priusColorLabel: UILabel!
     @IBOutlet var priusPicture: UIImageView!
     @IBOutlet var accPkgLabel: UILabel!
-   @IBOutlet var myPriusSummaryText: UITextView!
+    @IBOutlet var myPriusSummaryText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

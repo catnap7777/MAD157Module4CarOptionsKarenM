@@ -30,29 +30,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var priusModelDictionary = PriusStructures().priusModelDictionary
     var carColor = PriusStructures.CarColor.self
 
-    
-
-   
-    //var x = PriusStructures().kampriusModelDictionary
-   
-//    enum CarColor: String {
-//               case Blue = "Electric Storm Blue"
-//               case Pearl = "Blizzard Pearl"
-//               case Silver = "Classic Silver Metallic"
-//               case Gray = "Magnetic Gray Metallic"
-//               case Black = "Midnight Black Metallic"
-//               case Red = "Supersonic Red"
-//               case Sea = "Sea Glass Pearl"
-//           }
-    
-//    var priusModelDictionary = ["L Eco": (price: 24325.00, desc: "Economy"),
-//                                "LE": (price: 25535.00, desc: "Luxury Edition"),
-//                                "XLE": (price: 28375.00, desc: "Deluxe Luxury Edition"),
-//                                "Limited": (price: 32500.00, desc: "Limited Edition"),
-//                                "LE AWD-e": (price: 26935.00, desc: "Limited Edition All Wheel Drive"),
-//                                "XLE AWD-e": (price: 29375.00, desc: "Deluxe Limited Edition All Wheel Drive")
-//    ]
- 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         //.. tags are used to distinguish between the two picker on the view controller
         switch pickerView.tag {
@@ -95,7 +72,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 //    }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        var pickerLabel = UILabel()
+        let pickerLabel = UILabel()
         
         if pickerView.tag == 1 {  //.. pickerView 1 - car type
             pickerLabel.text = pickerTypeData[row]
@@ -182,13 +159,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                print(" key: = \(k)")
                print(" value: = \(v)")
            }
-           
-        
+         
         pickColorObj.delegate = self
         pickColorObj.dataSource = self
         pickCarTypeObj.delegate = self
         pickCarTypeObj.dataSource = self
         
+        //.. From above - var carColor "instantiated" from PriusStructures CarColor enum...
+        //..   The enum used to be in this vc.swift file.  Now it's in it's own file - PriusStructures
         pickerColorData = [carColor.Blue.rawValue,
                       carColor.Pearl.rawValue,
                       carColor.Silver.rawValue,
@@ -197,16 +175,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                       carColor.Red.rawValue,
                       carColor.Sea.rawValue
                     ]
-//
-//        pickerColorData = [CarColor.Blue.rawValue,
-//                  CarColor.Pearl.rawValue,
-//                  CarColor.Silver.rawValue,
-//                  CarColor.Gray.rawValue,
-//                  CarColor.Black.rawValue,
-//                  CarColor.Red.rawValue,
-//                  CarColor.Sea.rawValue
-//        ]
-        
+
         for (k,v) in priusModelDictionary {
             pickerTypeData.append(k)
             print("key added to pickerTypeData array: \(k)")
@@ -249,7 +218,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 }
 
 
-
+//... THIS IS ALL THE OLD CODE FROM THE MAD107 PRIUS PLAYGROUND PROGRAM (MAD107PriusPGKarenM)... IT HAS BEEN USED
+//...  IN THIS PROJECT EXCEPT FOR THE PARTS WHERE THE USER CAN SEPARATELY PICK INTERNAL AND EXTERNAL
+//...  ACCESSORIES.. AND THE "IS THERE A SALE" LOGIC.  FOR THIS ASSIGNMENT, I DIDN'T HAVE TIME
+//...  TO INCORPORATE EVERYTHING
 
 //import Cocoa
 //

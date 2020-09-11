@@ -24,80 +24,82 @@ class Prius2020 {
         self.priusColor = color.rawValue
     }
 
-    //.. computed variable - for a 10% off sale price
-    var salePromo: Double {
+    //... KAM 2020 MAD157 - NOT USING THIS FOR THIS ASSIGNMENT
+//    //.. computed variable - for a 10% off sale price
+//    var salePromo: Double {
+//
+//        guard (PriusStructures().priusModelDictionary[priusModel]?.price) != nil else {
+//            return 0
+//        }
+//        return ((PriusStructures().priusModelDictionary[priusModel]?.price ?? 0.0) - (PriusStructures().priusModelDictionary[priusModel]?.price ?? 0.0) * 0.10) // 10% off base price
+//    }
 
-        guard (PriusStructures().priusModelDictionary[priusModel]?.price) != nil else {
-            return 0
-        }
-        return ((PriusStructures().priusModelDictionary[priusModel]?.price ?? 0.0) - (PriusStructures().priusModelDictionary[priusModel]?.price ?? 0.0) * 0.10) // 10% off base price
-    }
-
-    func addExtAcc(extAccName: PriusStructures.ExtAcc) {
-        //ADD ACCESSORIES ONLY IF THEY ALREADY HAVEN'T BEEN ADDED AS PART OF AN ACCESSORY PACKAGE
-        switch extAccName {
-        //.. add if following accessories are not part of a package at all
-            case .AeroSS, .SpokeAW, .AlloyWL, .BlackoutWI, .PaintPF, .RearBP, .RemovableCB:
-                priusExtAccBuild.append(extAccName.rawValue)
-        //.. add if following accessories are not part of a package that was already added
-            case .BodySM:
-                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.PP3.rawValue)) {
-                    priusExtAccBuild.append(extAccName.rawValue)
-                }
-            case .DoorEG:
-                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.PP3.rawValue)) {
-                    priusExtAccBuild.append(extAccName.rawValue)
-                }
-            case .RearBA:
-                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.PP3.rawValue) &&
-                    !priusAccPkgBuild.contains(PriusStructures.AccPkgs.PAP.rawValue)) {
-
-                    priusExtAccBuild.append(extAccName.rawValue)
-                }
-        }
-
-    }
-
-    func addIntAcc(intAccName: PriusStructures.IntAcc) {
-        //ADD ACCESSORIES ONLY IF THEY ALREADY HAVEN'T BEEN ADDED AS PART OF AN ACCESSORY PACKAGE
-        switch intAccName {
-        //.. add if following accessories are not part of a package at all
-            case .CargoT, .CoinHAC, .EmergK, .FirstAK, .FlessHM, .IllumDS, .SecurS, .UnivTH:
-                priusIntAccBuild.append(intAccName.rawValue)
-        //.. add if following accessories are not part of a package that was already added
-            case .AllWFL:
-                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.ALLWFLP.rawValue) &&
-                    !priusAccPkgBuild.contains(PriusStructures.AccPkgs.FSFMLP.rawValue)) {
-
-                    priusIntAccBuild.append(intAccName.rawValue)
-                }
-            case .CargoN:
-                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.PAP.rawValue)) {
-                    priusIntAccBuild.append(intAccName.rawValue)
-                }
-            case .CargoL:
-                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.ALLWFLP.rawValue)) {
-                    priusIntAccBuild.append(intAccName.rawValue)
-                }
-            case .CarpetCM:
-                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.CMP.rawValue) &&
-                    !priusAccPkgBuild.contains(PriusStructures.AccPkgs.FSFMLP.rawValue) &&
-                    !priusAccPkgBuild.contains(PriusStructures.AccPkgs.PAP.rawValue)) {
-
-                    priusIntAccBuild.append(intAccName.rawValue)
-
-                }
-            case .CarpetFM:
-                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.CMP.rawValue) &&
-                    !priusAccPkgBuild.contains(PriusStructures.AccPkgs.FSFMLP.rawValue) &&
-                    !priusAccPkgBuild.contains(PriusStructures.AccPkgs.PAP.rawValue)) {
-
-                    priusIntAccBuild.append(intAccName.rawValue)
-                    }
-
-        }
-
-    }
+    //... KAM 2020 MAD157 - NOT USING THIS FOR THIS ASSIGNMENT
+//    func addExtAcc(extAccName: PriusStructures.ExtAcc) {
+//        //ADD ACCESSORIES ONLY IF THEY ALREADY HAVEN'T BEEN ADDED AS PART OF AN ACCESSORY PACKAGE
+//        switch extAccName {
+//        //.. add if following accessories are not part of a package at all
+//            case .AeroSS, .SpokeAW, .AlloyWL, .BlackoutWI, .PaintPF, .RearBP, .RemovableCB:
+//                priusExtAccBuild.append(extAccName.rawValue)
+//        //.. add if following accessories are not part of a package that was already added
+//            case .BodySM:
+//                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.PP3.rawValue)) {
+//                    priusExtAccBuild.append(extAccName.rawValue)
+//                }
+//            case .DoorEG:
+//                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.PP3.rawValue)) {
+//                    priusExtAccBuild.append(extAccName.rawValue)
+//                }
+//            case .RearBA:
+//                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.PP3.rawValue) &&
+//                    !priusAccPkgBuild.contains(PriusStructures.AccPkgs.PAP.rawValue)) {
+//
+//                    priusExtAccBuild.append(extAccName.rawValue)
+//                }
+//        }
+//
+//    }
+//
+//    func addIntAcc(intAccName: PriusStructures.IntAcc) {
+//        //ADD ACCESSORIES ONLY IF THEY ALREADY HAVEN'T BEEN ADDED AS PART OF AN ACCESSORY PACKAGE
+//        switch intAccName {
+//        //.. add if following accessories are not part of a package at all
+//            case .CargoT, .CoinHAC, .EmergK, .FirstAK, .FlessHM, .IllumDS, .SecurS, .UnivTH:
+//                priusIntAccBuild.append(intAccName.rawValue)
+//        //.. add if following accessories are not part of a package that was already added
+//            case .AllWFL:
+//                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.ALLWFLP.rawValue) &&
+//                    !priusAccPkgBuild.contains(PriusStructures.AccPkgs.FSFMLP.rawValue)) {
+//
+//                    priusIntAccBuild.append(intAccName.rawValue)
+//                }
+//            case .CargoN:
+//                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.PAP.rawValue)) {
+//                    priusIntAccBuild.append(intAccName.rawValue)
+//                }
+//            case .CargoL:
+//                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.ALLWFLP.rawValue)) {
+//                    priusIntAccBuild.append(intAccName.rawValue)
+//                }
+//            case .CarpetCM:
+//                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.CMP.rawValue) &&
+//                    !priusAccPkgBuild.contains(PriusStructures.AccPkgs.FSFMLP.rawValue) &&
+//                    !priusAccPkgBuild.contains(PriusStructures.AccPkgs.PAP.rawValue)) {
+//
+//                    priusIntAccBuild.append(intAccName.rawValue)
+//
+//                }
+//            case .CarpetFM:
+//                if (!priusAccPkgBuild.contains(PriusStructures.AccPkgs.CMP.rawValue) &&
+//                    !priusAccPkgBuild.contains(PriusStructures.AccPkgs.FSFMLP.rawValue) &&
+//                    !priusAccPkgBuild.contains(PriusStructures.AccPkgs.PAP.rawValue)) {
+//
+//                    priusIntAccBuild.append(intAccName.rawValue)
+//                    }
+//
+//        }
+//
+//    }
 
     func addAccPkg(accPkgName: PriusStructures.AccPkgs) {
 
@@ -181,43 +183,44 @@ class Prius2020 {
 
     }
 
-    //.. function called to see if there's a sale
-    func isThereASale() {
-
-        var saleFlag = false
-
-        switch priusModel {
-            case "L Eco":
-                saleFlag = false
-            case "LE":
-                saleFlag = false
-            case "XLE":
-                saleFlag = true
-            case "Limited":
-                saleFlag = false
-            case "LE AWD-e":
-                saleFlag = false
-            case "XLE AWD-e":
-                saleFlag = false
-            default:
-                saleFlag = false
-        }
-
-        if saleFlag == false {
-            var noSalePrice = salePromo
-            print("\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-            print("\t\t\t\t\t\t***** Sorry, but there is no sale right now *****")
-            print("\t\t\t\t\t\t\t\t***** Base Price = $\(String(format: "%.2f", PriusStructures().priusModelDictionary[priusModel]?.price ?? 0.0)) *****")
-            print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-        } else {
-            let salePrice = salePromo
-            print("\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-            print("\t\t\t\t***** CONGRATULATIONS!!!! THERE IS A SALE ON THIS MODEL: \(priusModel) *****")
-            print("\t\t\t\t\t\t\t***** NEW Base Price = $\(String(format: "%.2f", salePrice)) *****")
-            print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-
-        }
-    }
+    //... KAM 2020 MAD157 - NOT USING THIS FOR THIS ASSIGNMENT
+//    //.. function called to see if there's a sale
+//    func isThereASale() {
+//
+//        var saleFlag = false
+//
+//        switch priusModel {
+//            case "L Eco":
+//                saleFlag = false
+//            case "LE":
+//                saleFlag = false
+//            case "XLE":
+//                saleFlag = true
+//            case "Limited":
+//                saleFlag = false
+//            case "LE AWD-e":
+//                saleFlag = false
+//            case "XLE AWD-e":
+//                saleFlag = false
+//            default:
+//                saleFlag = false
+//        }
+//
+//        if saleFlag == false {
+//            var noSalePrice = salePromo
+//            print("\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+//            print("\t\t\t\t\t\t***** Sorry, but there is no sale right now *****")
+//            print("\t\t\t\t\t\t\t\t***** Base Price = $\(String(format: "%.2f", PriusStructures().priusModelDictionary[priusModel]?.price ?? 0.0)) *****")
+//            print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+//        } else {
+//            let salePrice = salePromo
+//            print("\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+//            print("\t\t\t\t***** CONGRATULATIONS!!!! THERE IS A SALE ON THIS MODEL: \(priusModel) *****")
+//            print("\t\t\t\t\t\t\t***** NEW Base Price = $\(String(format: "%.2f", salePrice)) *****")
+//            print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+//
+//        }
+//    }
 
     func printModColor() {
 
@@ -246,43 +249,44 @@ class Prius2020 {
 //            myPrius2020SummaryInfo = myPrius2020SummaryInfo +
 //                ("\t\t\t\tBase price:  2020 Prius Model: ** \(priusModel) not found **")
         }
-//**** kam
-        print("\n\t\t\t\tAccessory Packages Selected:")
-//        myPrius2020SummaryInfo = myPrius2020SummaryInfo +
-//            ("\n\t\tAccessory Packages Selected:")
-        if (priusAccPkgBuild.count) > 0 {
-            for item in priusAccPkgBuild {
-                print("\t\t\t\t\tPackage: \(PriusStructures().priusAccPkgsDictionary[item]?.desc ?? "Accessory Package not Available")")
-                print("\t\t\t\t\t\tIncludes: \(PriusStructures().priusAccPkgsDictionary[item]?.incls ?? "Invalid - Nothing Included")")
-            }
-        } else {
-            print("\t\t\t\t** No Accessory Packages Selected **")
-        }
-
-        print("\n\t\t\t\tExternal Accessories Selected:")
-//        myPrius2020SummaryInfo = myPrius2020SummaryInfo +
-//            ("\n\t\tExternal Accessories Selected:")
         
-        if (priusExtAccBuild.count) > 0 {
-            for item in priusExtAccBuild {
-                print("\t\t\t\t\t\(item)")
-            }
-        } else {
-            print("\t\t\t\t** No External Accessories Selected **")
-        }
-
-        print("\n\t\t\t\tInternal Accessories Selected:")
-//        myPrius2020SummaryInfo = myPrius2020SummaryInfo +
-//            ("\n\t\tInternal Accessories Selected:")
-        
-        if (priusIntAccBuild.count) > 0 {
-            for item in priusIntAccBuild {
-                print("\t\t\t\t\t\(item)")
-            }
-        } else {
-            print("\t\t\t\t** No Internal Accessories Selected **")
-        }
-
+//... KAM 2020 MAD157 - NOT USING THIS FOR THIS ASSIGNMENT
+//        print("\n\t\t\t\tAccessory Packages Selected:")
+////        myPrius2020SummaryInfo = myPrius2020SummaryInfo +
+////            ("\n\t\tAccessory Packages Selected:")
+//        if (priusAccPkgBuild.count) > 0 {
+//            for item in priusAccPkgBuild {
+//                print("\t\t\t\t\tPackage: \(PriusStructures().priusAccPkgsDictionary[item]?.desc ?? "Accessory Package not Available")")
+//                print("\t\t\t\t\t\tIncludes: \(PriusStructures().priusAccPkgsDictionary[item]?.incls ?? "Invalid - Nothing Included")")
+//            }
+//        } else {
+//            print("\t\t\t\t** No Accessory Packages Selected **")
+//        }
+//
+//        print("\n\t\t\t\tExternal Accessories Selected:")
+////        myPrius2020SummaryInfo = myPrius2020SummaryInfo +
+////            ("\n\t\tExternal Accessories Selected:")
+//        
+//        if (priusExtAccBuild.count) > 0 {
+//            for item in priusExtAccBuild {
+//                print("\t\t\t\t\t\(item)")
+//            }
+//        } else {
+//            print("\t\t\t\t** No External Accessories Selected **")
+//        }
+//
+//        print("\n\t\t\t\tInternal Accessories Selected:")
+////        myPrius2020SummaryInfo = myPrius2020SummaryInfo +
+////            ("\n\t\tInternal Accessories Selected:")
+//        
+//        if (priusIntAccBuild.count) > 0 {
+//            for item in priusIntAccBuild {
+//                print("\t\t\t\t\t\(item)")
+//            }
+//        } else {
+//            print("\t\t\t\t** No Internal Accessories Selected **")
+//        }
+//
 
 
 

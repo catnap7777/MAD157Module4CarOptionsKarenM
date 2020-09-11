@@ -21,17 +21,9 @@ class AccViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     var priusAccPkgDictionary = PriusStructures().priusAccPkgsDictionary
     
-//    var priusAccPkgsDictionary = ["ALLWFLP": (desc: "All-Weather Floor Liner Package", incls: "All-Weather Floor Liners, Cargo Liner"),
-//                                  "CMP": (desc: "Carpet Mat Package", incls: "Carpet Floor Mats, Carpet Cargo Mat"),
-//                                  "FSFMLP": (desc: "Four Season FLoor Mat/Liner Package", incls: "Carpet Floor Mats, Carpet Cargo Mat, All-Weather Floor Liners"),
-//                                  "PAP": (desc: "Preferred Accessory Package", incls: "Carpet Floor Mats, Carpet Cargo Mat, Rear Bumper Applique, Cargo Net - Envelope"),
-//                                  "PP3": (desc: "Protection Package #3", incls: "Body Side Moldings, Door Edge Guards, Rear Bumper Applique")
-//    ]
-    
     @IBOutlet var accPicker: UIPickerView!
     @IBOutlet var carTypeLabel: UILabel!
     @IBOutlet var carColorLabel: UILabel!
-    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
             return 1
@@ -50,7 +42,7 @@ class AccViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
 //    }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        var pickerLabel = UILabel()
+        let pickerLabel = UILabel()
         //let accPkgKey2 = priusAccPkgsDictionary[pickerAccPkgData[row]]
         let accPkgKey2 = PriusStructures().priusAccPkgsDictionary[pickerAccPkgData[row]]
 //        pickerLabel.text = ("\(pickerAccPkgData[row]) - \(accPkgKey?.desc ?? "no desc") - \(accPkgKey?.incls ?? "")")
@@ -72,21 +64,6 @@ class AccViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         let pickerAccPkgIndex = accPicker.selectedRow(inComponent: 0)
         accPkgKey = pickerAccPkgData[row]
         print("acc pkg chosen (ie. key) = \(accPkgKey)")
-        
-        
-        
-//        //.. tags are used to distinguish between the two picker on the view controller
-//        if pickerView.tag == 1 {
-//            let pickerTypeIndex = pickCarTypeObj.selectedRow(inComponent: 0)
-//            carTypeChosen = pickerTypeData[pickerTypeIndex]
-//
-//            carTypeDesc = priusModelDictionary[carTypeChosen]?.desc as! String
-//            carTypePrice = priusModelDictionary[carTypeChosen]?.price as! Double
-//            print("pickerView tag1 triggered")
-//        }
-//        
-//       
-//        }
     
     }
     
@@ -112,25 +89,19 @@ class AccViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         print("priusColor = \(priusColor)")
         print("pictureNameString in second VC = \(pictureNameString)")
         
-        
-        
         let priusTypeComp = ("\(priusType) - \(priusTypeDesc) - Base Price: $\(String(format: "%.2f", priusTypePrice))")
-//        $\(priusTypePrice)")
         
         //carTypeLabel.text = priusType
         carTypeLabel.text = priusTypeComp
         carColorLabel.text = priusColor
         
         //.. this code is used to set initial values before pickers move
-        var accPkg = pickerAccPkgData[0]
+        let accPkg = pickerAccPkgData[0]
         accPkgKey = pickerAccPkgData[0]
-//        var accPkgDesc = priusAccPkgsDictionary[accPkg]?.desc
-//        var accPkgIncls = priusAccPkgsDictionary[accPkg]?.incls
         var accPkgDesc = PriusStructures().priusAccPkgsDictionary[accPkg]?.desc
         var accPkgIncls = PriusStructures().priusAccPkgsDictionary[accPkg]?.incls
         
     }
-    
 
     @IBAction func displaySummary(_ sender: Any) {
         print("button clicked")
@@ -156,14 +127,6 @@ class AccViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
 //        nv2.accPkgIncls = priusAccPkgsDictionary[accPkgKey]?.incls as! String
         nv2.accPkgDesc = PriusStructures().priusAccPkgsDictionary[accPkgKey]?.desc as! String
         nv2.accPkgIncls = PriusStructures().priusAccPkgsDictionary[accPkgKey]?.incls as! String
-
-        
-//        print("the color of the car chosen on first vc = \(carColorChosen)")
-//        print("the type of the car chosen on first vc = \(carTypeChosen)")
-//        nv2.priusColor = carColorChosen
-//        nv2.priusType = carTypeChosen
-//        nv2.priusTypeDesc = carTypeDesc
-//        nv2.priusTypePrice = carTypePrice
         
     }
     
