@@ -14,6 +14,7 @@ class SumViewController: UIViewController {
     var priusTypeDesc = ""
     var priusTypePrice = 0.0
     var priusColor = ""
+    var priusColorEnum: PriusStructures.CarColor = PriusStructures.CarColor.Blue //default value
     var accPkg = ""
     var accPkgDesc = ""
     var accPkgIncls = ""
@@ -34,6 +35,27 @@ class SumViewController: UIViewController {
         priusPicture.image = UIImage.init(named: pictureNameString)
         print("pictureNameString in third VC = \(pictureNameString)")
         accPkgLabel.text = ("\(accPkg) - \(accPkgDesc) - Includes: \(accPkgIncls)")
+        
+        switch priusType {
+        case "L Eco":
+            let myPrius2020 = PriusLEco(model: priusType, color: priusColorEnum)
+        case "LE":
+            let myPrius2020 = PriusLE(model: priusType, color: priusColorEnum)
+        case "XLE":
+            let myPrius2020 = PriusXLE(model: priusType, color: priusColorEnum)
+        case "Limited":
+            let myPrius2020 = PriusLimited(model: priusType, color: priusColorEnum)
+        case "LE AWD-e":
+            let myPrius2020 = PriusLEAWDe(model: priusType, color: priusColorEnum)
+        case "XLE AWD-e":
+            let myPrius2020 = PriusXLEAWDe(model: priusType, color: priusColorEnum)
+        default:
+            print("Uh oh. Something is not right")
+            
+        }
+        
+        print("in sumviewcontroller - priusType = \(priusType)  priusColor = \(priusColor)  priusColorEnum = \(priusColorEnum)")
+        
     }
     
 

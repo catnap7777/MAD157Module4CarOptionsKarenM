@@ -24,10 +24,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var carTypePrice :Double = 0
     var carTypeDesc :String = ""
     var carColorChosen :String = ""
+    var carColorEnumChosen :PriusStructures.CarColor = PriusStructures.CarColor.Blue //default value
     var pictureNameString = ""
     
     var priusModelDictionary = PriusStructures().priusModelDictionary
     var carColor = PriusStructures.CarColor.self
+
     
 
    
@@ -135,29 +137,37 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             case 0:
                 priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
                 pictureNameString = "electricStormBlue.png"
+                carColorEnumChosen = PriusStructures.CarColor.Blue
                 //print("pictureNameString in first VC1111 = \(pictureNameString)")
             case 1:
                 priusColorPict.image = UIImage.init(named: "windChillPearl.png")
                 pictureNameString = "windChillPearl.png"
+                carColorEnumChosen = PriusStructures.CarColor.Pearl
                 //print("pictureNameString in first VC2222 = \(pictureNameString)")
             case 2:
                 priusColorPict.image = UIImage.init(named: "classicSilverMetallic.png")
                 pictureNameString = "classicSilverMetallic.png"
+                carColorEnumChosen = PriusStructures.CarColor.Silver
             case 3:
                 priusColorPict.image = UIImage.init(named: "magneticGrayMetallic.png")
                 pictureNameString = "magneticGrayMetallic.png"
+                carColorEnumChosen = PriusStructures.CarColor.Gray
             case 4:
                 priusColorPict.image = UIImage.init(named: "midnightBlackMetallic.png")
                 pictureNameString = "midnightBlackMetallic.png"
+                carColorEnumChosen = PriusStructures.CarColor.Black
             case 5:
                 priusColorPict.image = UIImage.init(named: "supersonicRed.png")
                 pictureNameString = "supersonicRed.png"
+                carColorEnumChosen = PriusStructures.CarColor.Red
             case 6:
                 priusColorPict.image = UIImage.init(named: "seaGlassPearl.png")
                 pictureNameString = "seaGlassPearl.png"
+                carColorEnumChosen = PriusStructures.CarColor.Pearl
             default:
                 priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
                 pictureNameString = "electricStormBlue.png"
+                carColorEnumChosen = PriusStructures.CarColor.Blue
             }
         }
     
@@ -230,6 +240,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         nv.priusTypeDesc = carTypeDesc
         nv.priusTypePrice = carTypePrice
         nv.pictureNameString = pictureNameString
+        nv.priusColorEnum = carColorEnumChosen
+        
         print("pictureNameString in first VC = \(pictureNameString)")
         
     }

@@ -14,6 +14,7 @@ class AccViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     var priusTypeDesc = ""
     var priusTypePrice = 0.0
     var priusColor = ""
+    var priusColorEnum: PriusStructures.CarColor = PriusStructures.CarColor.Blue  //default value
     var pickerAccPkgData: [String] = [String]()
     var pictureNameString = ""
     var accPkgKey = ""
@@ -137,6 +138,7 @@ class AccViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         let nv2 = segue.destination as! SumViewController
 
         nv2.priusColor = priusColor
+        nv2.priusColorEnum = priusColorEnum
         nv2.priusType = priusType
         nv2.priusTypeDesc = priusTypeDesc
         nv2.priusTypePrice = priusTypePrice
