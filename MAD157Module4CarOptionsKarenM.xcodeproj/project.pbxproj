@@ -22,6 +22,15 @@
 		3A4E77E325086CAD007A3AFD /* supersonicRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E77DC25086CAD007A3AFD /* supersonicRed.png */; };
 		3A4E77E925092112007A3AFD /* AccViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E77E825092112007A3AFD /* AccViewController.swift */; };
 		3A4E77ED2509D096007A3AFD /* SumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E77EC2509D096007A3AFD /* SumViewController.swift */; };
+		3A50A3A3250AE6F500482556 /* Prius2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50A3A2250AE6F500482556 /* Prius2020.swift */; };
+		3A50A3A5250AE76E00482556 /* PriusLEco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50A3A4250AE76E00482556 /* PriusLEco.swift */; };
+		3A50A3A7250AE7A800482556 /* PriusLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50A3A6250AE7A800482556 /* PriusLE.swift */; };
+		3A50A3A9250AE7D900482556 /* PriusXLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50A3A8250AE7D900482556 /* PriusXLE.swift */; };
+		3A50A3AB250AE81200482556 /* PriusLimited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50A3AA250AE81200482556 /* PriusLimited.swift */; };
+		3A50A3AD250AE84B00482556 /* PriusLEAWDe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50A3AC250AE84B00482556 /* PriusLEAWDe.swift */; };
+		3A50A3AF250AE88300482556 /* PriusXLEAWDe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50A3AE250AE88300482556 /* PriusXLEAWDe.swift */; };
+		3A50A3B1250AE98A00482556 /* priusModelDictionaryClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50A3B0250AE98A00482556 /* priusModelDictionaryClass.swift */; };
+		3A50A3B3250AE9E600482556 /* PriusStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50A3B2250AE9E600482556 /* PriusStructures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +51,15 @@
 		3A4E77DC25086CAD007A3AFD /* supersonicRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = supersonicRed.png; path = "Toyota Prius/supersonicRed.png"; sourceTree = SOURCE_ROOT; };
 		3A4E77E825092112007A3AFD /* AccViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccViewController.swift; sourceTree = "<group>"; };
 		3A4E77EC2509D096007A3AFD /* SumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumViewController.swift; sourceTree = "<group>"; };
+		3A50A3A2250AE6F500482556 /* Prius2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prius2020.swift; sourceTree = "<group>"; };
+		3A50A3A4250AE76E00482556 /* PriusLEco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriusLEco.swift; sourceTree = "<group>"; };
+		3A50A3A6250AE7A800482556 /* PriusLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriusLE.swift; sourceTree = "<group>"; };
+		3A50A3A8250AE7D900482556 /* PriusXLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriusXLE.swift; sourceTree = "<group>"; };
+		3A50A3AA250AE81200482556 /* PriusLimited.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriusLimited.swift; sourceTree = "<group>"; };
+		3A50A3AC250AE84B00482556 /* PriusLEAWDe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriusLEAWDe.swift; sourceTree = "<group>"; };
+		3A50A3AE250AE88300482556 /* PriusXLEAWDe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriusXLEAWDe.swift; sourceTree = "<group>"; };
+		3A50A3B0250AE98A00482556 /* priusModelDictionaryClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = priusModelDictionaryClass.swift; sourceTree = "<group>"; };
+		3A50A3B2250AE9E600482556 /* PriusStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriusStructures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +98,15 @@
 				3A4E77E825092112007A3AFD /* AccViewController.swift */,
 				3A4E77EC2509D096007A3AFD /* SumViewController.swift */,
 				3A4E77B82505CEBD007A3AFD /* Main.storyboard */,
+				3A50A3A2250AE6F500482556 /* Prius2020.swift */,
+				3A50A3A4250AE76E00482556 /* PriusLEco.swift */,
+				3A50A3A6250AE7A800482556 /* PriusLE.swift */,
+				3A50A3A8250AE7D900482556 /* PriusXLE.swift */,
+				3A50A3AA250AE81200482556 /* PriusLimited.swift */,
+				3A50A3AC250AE84B00482556 /* PriusLEAWDe.swift */,
+				3A50A3AE250AE88300482556 /* PriusXLEAWDe.swift */,
+				3A50A3B2250AE9E600482556 /* PriusStructures.swift */,
+				3A50A3B0250AE98A00482556 /* priusModelDictionaryClass.swift */,
 				3A4E77BB2505CEBF007A3AFD /* Assets.xcassets */,
 				3A4E77D725086CAD007A3AFD /* classicSilverMetallic.png */,
 				3A4E77D625086CAC007A3AFD /* electricStormBlue.png */,
@@ -172,9 +199,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A50A3A9250AE7D900482556 /* PriusXLE.swift in Sources */,
 				3A4E77E925092112007A3AFD /* AccViewController.swift in Sources */,
 				3A4E77B72505CEBD007A3AFD /* ViewController.swift in Sources */,
+				3A50A3B1250AE98A00482556 /* priusModelDictionaryClass.swift in Sources */,
 				3A4E77B32505CEBD007A3AFD /* AppDelegate.swift in Sources */,
+				3A50A3A5250AE76E00482556 /* PriusLEco.swift in Sources */,
+				3A50A3A7250AE7A800482556 /* PriusLE.swift in Sources */,
+				3A50A3AF250AE88300482556 /* PriusXLEAWDe.swift in Sources */,
+				3A50A3AB250AE81200482556 /* PriusLimited.swift in Sources */,
+				3A50A3B3250AE9E600482556 /* PriusStructures.swift in Sources */,
+				3A50A3AD250AE84B00482556 /* PriusLEAWDe.swift in Sources */,
+				3A50A3A3250AE6F500482556 /* Prius2020.swift in Sources */,
 				3A4E77B52505CEBD007A3AFD /* SceneDelegate.swift in Sources */,
 				3A4E77ED2509D096007A3AFD /* SumViewController.swift in Sources */,
 			);

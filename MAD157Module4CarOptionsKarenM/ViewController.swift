@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet var addAccButton: UIButton!
@@ -24,7 +25,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var carTypeDesc :String = ""
     var carColorChosen :String = ""
     var pictureNameString = ""
-    
+
+   
+    var x = PriusStructures().kampriusModelDictionary
+   
     enum CarColor: String {
                case Blue = "Electric Storm Blue"
                case Pearl = "Blizzard Pearl"
@@ -159,6 +163,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        for (k,v) in x {
+               print(" key: = \(k)")
+               print(" value: = \(v)")
+           }
+           
         
         pickColorObj.delegate = self
         pickColorObj.dataSource = self
