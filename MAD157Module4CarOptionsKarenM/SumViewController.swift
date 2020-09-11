@@ -36,23 +36,32 @@ class SumViewController: UIViewController {
         print("pictureNameString in third VC = \(pictureNameString)")
         accPkgLabel.text = ("\(accPkg) - \(accPkgDesc) - Includes: \(accPkgIncls)")
         
+        //.. maybe move this to AccViewController if working more with accessories
         switch priusType {
         case "L Eco":
             let myPrius2020 = PriusLEco(model: priusType, color: priusColorEnum)
+            myPrius2020.printModColor()
         case "LE":
             let myPrius2020 = PriusLE(model: priusType, color: priusColorEnum)
+            myPrius2020.printModColor()
         case "XLE":
             let myPrius2020 = PriusXLE(model: priusType, color: priusColorEnum)
+            myPrius2020.printModColor()
         case "Limited":
             let myPrius2020 = PriusLimited(model: priusType, color: priusColorEnum)
+            myPrius2020.printModColor()
         case "LE AWD-e":
             let myPrius2020 = PriusLEAWDe(model: priusType, color: priusColorEnum)
+            myPrius2020.printModColor()
         case "XLE AWD-e":
             let myPrius2020 = PriusXLEAWDe(model: priusType, color: priusColorEnum)
+            myPrius2020.printModColor()
         default:
             print("Uh oh. Something is not right")
             
         }
+        
+       
         
         print("in sumviewcontroller - priusType = \(priusType)  priusColor = \(priusColor)  priusColorEnum = \(priusColorEnum)")
         

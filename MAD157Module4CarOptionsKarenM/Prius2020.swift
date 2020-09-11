@@ -25,10 +25,10 @@ class Prius2020 {
     //.. computed variable - for a 10% off sale price
     var salePromo: Double {
 
-        guard (priusModelDictionary[priusModel]?.price) != nil else {
+        guard (PriusStructures().priusModelDictionary[priusModel]?.price) != nil else {
             return 0
         }
-        return ((priusModelDictionary[priusModel]?.price ?? 0.0) - (priusModelDictionary[priusModel]?.price ?? 0.0) * 0.10) // 10% off base price
+        return ((PriusStructures().priusModelDictionary[priusModel]?.price ?? 0.0) - (PriusStructures().priusModelDictionary[priusModel]?.price ?? 0.0) * 0.10) // 10% off base price
     }
 
     func addExtAcc(extAccName: PriusStructures.ExtAcc) {
@@ -205,7 +205,7 @@ class Prius2020 {
             var noSalePrice = salePromo
             print("\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
             print("\t\t\t\t\t\t***** Sorry, but there is no sale right now *****")
-            print("\t\t\t\t\t\t\t\t***** Base Price = $\(String(format: "%.2f", priusModelDictionary[priusModel]?.price ?? 0.0)) *****")
+            print("\t\t\t\t\t\t\t\t***** Base Price = $\(String(format: "%.2f", PriusStructures().priusModelDictionary[priusModel]?.price ?? 0.0)) *****")
             print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         } else {
             let salePrice = salePromo
@@ -230,7 +230,7 @@ class Prius2020 {
 
 
 
-        if let myPrice = priusModelDictionary[priusModel]?.price {
+        if let myPrice = PriusStructures().priusModelDictionary[priusModel]?.price {
             print("\t\t\t\tBase price: $\(String(format: "%.2f", myPrice))")
             //print("\n\t\t\t\tBase price: $\(Double(myPrice))")
         } else {

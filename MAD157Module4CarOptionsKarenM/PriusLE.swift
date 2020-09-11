@@ -20,7 +20,7 @@ class PriusLE: Prius2020 {
 
     override func printModColor() {
         super.printModColor()
-        print("\nModel LE: \(priusModelDictionary[kamModel]?.desc ?? "nf")")
+        print("\nModel LE: \(PriusStructures().priusModelDictionary[kamModel]?.desc ?? "nf")")
 
         let stdEquip = ["54/50 est. mpg",
                         "Toyota Safety Sense P (TSS-P) standard",

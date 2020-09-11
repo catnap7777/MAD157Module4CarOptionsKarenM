@@ -20,7 +20,7 @@ class PriusLEAWDe: Prius2020 {
 
     override func printModColor() {
         super.printModColor()
-        print("\nModel LE AWD-e: \(priusModelDictionary[kamModel]?.desc ?? "nf")")
+        print("\nModel LE AWD-e: \(PriusStructures().priusModelDictionary[kamModel]?.desc ?? "nf")")
 
         let stdEquip = ["52/48 est. mpg",
                         "Electronic On-Demand Compact All-Wheel Drive (AWD-e)",

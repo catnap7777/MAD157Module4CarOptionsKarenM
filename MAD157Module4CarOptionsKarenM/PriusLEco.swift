@@ -20,7 +20,7 @@ class PriusLEco: Prius2020 {
 
     override func printModColor() {
         super.printModColor()
-        print("\nModel L Eco: \(priusModelDictionary[kamModel]?.desc ?? "nf")")
+        print("\nModel L Eco: \(PriusStructures().priusModelDictionary[kamModel]?.desc ?? "nf")")
 
         let stdEquip = ["58/53 est. mpg","15-in. 5-spoke alloy wheels with full wheel covers and P195/65R15 tires",
                         "7-in. touch-screen with Apple CarPlay & Amazon Alexa compatible",
