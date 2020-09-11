@@ -15,6 +15,8 @@ class Prius2020 {
     var priusExtAccBuild: [String] = []
     var priusIntAccBuild: [String] = []
     var priusAccPkgBuild: [String] = []
+    
+    var myPrius2020SummaryInfo: String = "this is supposed to have into"
 
 
     init(model: String, color: PriusStructures.CarColor) {
@@ -227,17 +229,27 @@ class Prius2020 {
         print("***************************************************************************************************")
         print("***************************************************************************************************")
         print("\n\t\tYou've selected:  \n\n\t\t\t\tModel: \(priusModel)   Color: \(priusColor)")
+        
+        myPrius2020SummaryInfo = ("\t** Congrats on your 2020 Prius purchase! **")
+//        ("** Congrats on your 2020 Prius purchase! **") +
+//        ("\nYou've selected:\n\tModel: \(priusModel)   Color: \(priusColor)")
 
 
 
         if let myPrice = PriusStructures().priusModelDictionary[priusModel]?.price {
             print("\t\t\t\tBase price: $\(String(format: "%.2f", myPrice))")
             //print("\n\t\t\t\tBase price: $\(Double(myPrice))")
+//            myPrius2020SummaryInfo = myPrius2020SummaryInfo +
+//                ("\t\t\t\tBase price: $\(String(format: "%.2f", myPrice))")
         } else {
             print("\t\t\t\tBase price:  2020 Prius Model: ** \(priusModel) not found **")
+//            myPrius2020SummaryInfo = myPrius2020SummaryInfo +
+//                ("\t\t\t\tBase price:  2020 Prius Model: ** \(priusModel) not found **")
         }
-
+//**** kam
         print("\n\t\t\t\tAccessory Packages Selected:")
+        myPrius2020SummaryInfo = myPrius2020SummaryInfo +
+            ("\n\t\tAccessory Packages Selected:")
         if (priusAccPkgBuild.count) > 0 {
             for item in priusAccPkgBuild {
                 print("\t\t\t\t\tPackage: \(PriusStructures().priusAccPkgsDictionary[item]?.desc ?? "Accessory Package not Available")")
@@ -248,6 +260,9 @@ class Prius2020 {
         }
 
         print("\n\t\t\t\tExternal Accessories Selected:")
+        myPrius2020SummaryInfo = myPrius2020SummaryInfo +
+            ("\n\t\tExternal Accessories Selected:")
+        
         if (priusExtAccBuild.count) > 0 {
             for item in priusExtAccBuild {
                 print("\t\t\t\t\t\(item)")
@@ -257,6 +272,9 @@ class Prius2020 {
         }
 
         print("\n\t\t\t\tInternal Accessories Selected:")
+        myPrius2020SummaryInfo = myPrius2020SummaryInfo +
+            ("\n\t\tInternal Accessories Selected:")
+        
         if (priusIntAccBuild.count) > 0 {
             for item in priusIntAccBuild {
                 print("\t\t\t\t\t\(item)")

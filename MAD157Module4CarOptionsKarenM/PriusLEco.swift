@@ -12,6 +12,7 @@ import Foundation
 class PriusLEco: Prius2020 {
 
     var kamModel: String
+    var stdEquipString: String = ""
 
     override init(model: String, color: PriusStructures.CarColor) {
         self.kamModel = "L Eco"
@@ -32,11 +33,15 @@ class PriusLEco: Prius2020 {
 
         var i = 1
         print("\nStandard Equipment:")
+        stdEquipString = ("\nStandard Equipment:")
         print("..................................................................................................")
         for item in stdEquip {
             print("\(i). \(item)")
             i += 1
+            stdEquipString = stdEquipString + ("\n\(i). \(item)")
         }
+        
+        super.myPrius2020SummaryInfo = super.myPrius2020SummaryInfo + stdEquipString
     }
 
 }
